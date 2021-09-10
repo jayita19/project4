@@ -1,0 +1,36 @@
+<paste log output from Kubernetes-mediated prediction, here>
+
+Terminal1
+(.devops) udacity2:~/environment/project4 (main) $ kubectl get services
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   114s
+(.devops) udacity2:~/environment/project4 (main) $ ./run_kubernetes.sh
+pod/project4 created
+NAME       READY   STATUS              RESTARTS   AGE
+project4   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) udacity2:~/environment/project4 (main) $ kubectl get nodes
+NAME       STATUS   ROLES                  AGE     VERSION
+minikube   Ready    control-plane,master   3m19s   v1.22.1
+(.devops) udacity2:~/environment/project4 (main) $ kubectl get pods
+NAME       READY   STATUS    RESTARTS   AGE
+project4   1/1     Running   0          89s
+(.devops) udacity2:~/environment/project4 (main) $ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "project4" already exists
+NAME       READY   STATUS    RESTARTS   AGE
+project4   1/1     Running   0          2m48s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+
+
+Terminal2:
+
+udacity2:~/environment/project4 (main) $ ./make_prediction.sh 
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+udacity2:~/environment/project4 (main) $ 
