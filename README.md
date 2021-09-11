@@ -1,4 +1,3 @@
-[![CircleCI](https://app.circleci.com/pipelines/github/Ramrbs1/ramProject5.svg?style=svg&circle-token=498e546cdfa71e77222b2f068d764b6b8c14ce2e)](https://app.circleci.com/pipelines/github/Ramrbs1/ramProject5)
 
 ## Project Overview
  
@@ -18,7 +17,7 @@ Your project goal is to operationalize this working, machine learning microservi
 ---
 
 ## Setup the Environment
-* clone git repo https://github.com/Ramrbs1/ramProject5.git
+* clone git repo https://github.com/jayita19/project4.git
 * Create a virtualenv and activate it
 * Run `make install` to install the necessary dependencies
 * Run make lint to test the dokcerfile and app.py file
